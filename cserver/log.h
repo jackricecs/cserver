@@ -14,6 +14,14 @@ class LogEvent{
 public:
     typedef std::shared_ptr<LogEvent> ptr;
     LogEvent();
+    const char* getFile() const {return m_file;}
+    int32_t getLine() const {return m_line;}
+    uint32_t getThreadId() const {return m_threadId;}
+    uint32_t getElapse() const {return m_elapse;}
+    uint32_t getFiberId() const {return m_fiberId;}
+    uint64_t getTime() const {return m_time;}
+    std::string getContent() const {return m_content;}
+
 private:
     const char* m_file = nullptr; // file name
     int32_t m_line = 0; // line num
@@ -34,6 +42,7 @@ public:
         ERROR = 4,
         FATAL = 5
     };
+    static const char* ToString(LogLevel::Level level) ;
 };
 
 // log format
@@ -41,13 +50,13 @@ class LogFormatter {
 public:
     typedef std::shared_ptr<LogFormatter> ptr;
     LogFormatter(const std::string& pattern);
-    std::string format(LogEvent::ptr event);
-private:
+    std::string format(LogLevel::Level level, LogEvent::ptr event);
+public:
     class FormatItem {
     public:
-        typedef std::shared_ptr<LogFormatter> ptr;
+        typedef std::shared_ptr<FormatItem> ptr;
         virtual ~FormatItem() {}
-        virtual void format(std::ostream& os, LogEvent::ptr event) = 0;
+        virtual void format(std::ostream& os,LogLevel::Level level, LogEvent::ptr event) = 0;
     };
 private:
     std::string m_pattern;
@@ -83,8 +92,7 @@ public:
     void addAppender(LogAppender::ptr appender);
     void delAppender(LogAppender::ptr appender);
     LogLevel::Level getLevel() const {return m_level;}
-    void setLevel(LogLevel::Level val) {m_level = val;}
-private:
+    void setLevel(LogLevel::Level val) {m_level = val;} private:
     std::string m_name;
     LogLevel::Level m_level;
     std::list<LogAppender::ptr> m_appenders; 
