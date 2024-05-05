@@ -113,8 +113,9 @@ void Logger::delAppender(LogAppender::ptr appender) {
 
 void Logger::log(LogLevel::Level level, LogEvent::ptr event) {
     if (level >= m_level) {
+        auto self = shared_from_this();
         for (auto& i : m_appenders) {
-            i->log(std::make_shared<Logger> (*this), level, event);
+            i->log(self, level, event);
         }
     }
 }

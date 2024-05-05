@@ -80,7 +80,7 @@ protected:
 
 
 
-class Logger {
+class Logger: public std::enable_shared_from_this <Logger>{
 public:
     Logger(const std::string& name = "root");
     void log(LogLevel::Level level, LogEvent::ptr event);
