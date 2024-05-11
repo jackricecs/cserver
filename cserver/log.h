@@ -99,6 +99,7 @@ private:
     std::string m_name;
     LogLevel::Level m_level;
     std::list<LogAppender::ptr> m_appenders; 
+    LogFormatter::ptr m_formatter;
 };
 
 //output to console

@@ -1,8 +1,9 @@
 #include <iostream>
-
+#include "../cserver/log.h"
 int main()
 {
-    std::cout << "Hello world" << std::endl;
+    cserver::Logger::ptr logger(new cserver::Logger);
+    logger->addAppender(cserver::LogAppender::ptr(new cserver::StdoutLogAppender));
     return 0;
 }
 
