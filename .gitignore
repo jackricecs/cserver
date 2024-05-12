@@ -1,4 +1,3 @@
-./CMakeCache.txt
-./bin
-./CMakeFiles/
+CMakeCache.txt
+CMakeFiles/
 *.so
