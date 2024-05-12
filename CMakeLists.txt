@@ -2,9 +2,10 @@ cmake_minimum_required(VERSION 2.8)
 project(cserver)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -rdynamic -O3 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -rdynamic -O0 -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function")
 set (LIB_SRC
     cserver/log.cc
+    cserver/log.h
     )
 add_library(cserver SHARED ${LIB_SRC})
 

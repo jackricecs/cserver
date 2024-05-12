@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/workspace/cserver/cserver/log.cc" "CMakeFiles/cserver.dir/cserver/log.cc.o" "gcc" "CMakeFiles/cserver.dir/cserver/log.cc.o.d"
+  "/home/jack/workspace/cserver/cserver/log.cc" "CMakeFiles/cserver.dir/cserver/log.cc.o" "gcc" "CMakeFiles/cserver.dir/cserver/log.cc.o.d"
   )
 
 # Targets to which this target links.

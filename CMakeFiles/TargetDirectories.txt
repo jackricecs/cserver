@@ -1,4 +1,4 @@
-/home/ubuntu/workspace/cserver/CMakeFiles/cserver.dir
-/home/ubuntu/workspace/cserver/CMakeFiles/test.dir
-/home/ubuntu/workspace/cserver/CMakeFiles/edit_cache.dir
-/home/ubuntu/workspace/cserver/CMakeFiles/rebuild_cache.dir
+/home/jack/workspace/cserver/CMakeFiles/cserver.dir
+/home/jack/workspace/cserver/CMakeFiles/test.dir
+/home/jack/workspace/cserver/CMakeFiles/edit_cache.dir
+/home/jack/workspace/cserver/CMakeFiles/rebuild_cache.dir
